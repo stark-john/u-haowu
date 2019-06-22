@@ -1,0 +1,51 @@
+@import '@/lib/reset.scss';
+* { touch-action: pan-y }
+html, body, #root, .container,.animated-router-container {
+  @include rect(100%, 100%);
+}
+.container {
+  @include flexbox();
+  @include flex-direction(column);
+  .box {
+    @include flex();
+    @include rect(100%, auto);
+    @include flexbox();
+    @include flex-direction(column);
+    font-family: 'PingFangSC-regular';
+    font-size:.18rem;
+    color:#101010;
+    .header {
+      @include rect(100%, 0.5rem);
+      @include background-color(#fff);
+    }
+    .content {
+      @include flex();
+      @include rect(100%, auto);
+    }
+  }
+  .footer {
+    @include rect(100%, 0.5rem);
+    ul {
+      @include rect(100%, 100%);
+      @include flexbox();
+      a {
+        @include flex();
+        @include rect(auto, 100%);
+        @include flexbox();
+        @include flex-direction(column);
+        @include justify-content();
+        @include align-items();
+        @include text-color(#4599F8);
+        span{
+          font:.24rem/1.2 '';
+        }
+        p{
+          font:.13rem/1.4 '';
+        }
+        &.active {
+          @include text-color(#f66);
+        }
+      }
+    }
+  }
+}
