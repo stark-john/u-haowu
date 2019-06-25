@@ -1,0 +1,126 @@
+@import '@/lib/reset.scss';
+// * { touch-action: pan-y };
+// * { touch-action: none };
+.h-header {
+  @include rect(100%, 0.44rem);
+  @include font-size(0.12rem);
+  font-family: "Roboto";
+  @include background-color(#D5D5D5);
+  .search {
+    @include text-color(rgba(170,170,170,1));
+    display: flex;
+    @include rect(2.3rem, 0.3rem);
+    @include background-color(rgb(238,238,238));
+    @include margin(0.07rem auto);
+    @include border-radius(0.15rem);
+    line-height: 0.3rem;
+    span {
+      @include rect(2.5rem, 100%);
+      text-indent: 0.2rem;
+    }
+    i {
+      @include rect(0.3rem, 100%);
+    }
+  }
+}
+.content {
+  overflow: auto;
+  // .slider-slide {
+  //   @include rect(100%, 1.02rem);
+  // }
+  .h-nav {
+    @include rect(100%, 1.6rem);
+    margin-bottom: 0.1rem;
+    ul {
+      @include flexbox();
+      @include rect(100%, 100%);
+      @include flex-wrap(wrap);
+      padding-top: 0.13rem;
+      // border-bottom: 0.01 solid #D5D5D5;
+      // @include justify-content(space-around);
+      li {
+        @include display(flex);
+        @include flex-direction(column);
+        @include rect(25%, 50%);
+        img {
+          @include rect(0.65rem, 0.55rem);
+          // @include border-radius(50%);
+          @include margin(0 auto);
+        };
+        span {
+          @include font-size(0.1rem);
+          @include line-height(0.1rem);
+          @include rect(100%, 0.15rem);
+          @include text-align(center);
+          @include margin(0.05rem 0);
+        }
+      }
+    }
+  }
+}
+.h-goods {
+  ul {
+    width: 100%;
+    li {
+      @include flexbox();
+      @include rect(100%, 1.04rem);
+      @include padding(0.1rem 0.1rem);
+      border-top: 0.02rem solid #D5D5D5;
+      img {
+        @include rect(1.03rem, 0.84rem);
+        @include margin(0 0.09rem 0 0);
+      }
+      .right {
+        @include flexbox();
+        @include flex-direction(column);
+        h3{
+          @include font-size(0.14rem);
+          @include text-color(#000);
+          @include rect(2.2rem, 0.4rem);
+          @include line-height(0.2rem);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+        }
+        .discount {
+          @include margin(0.05rem 0 0 0);
+          @include flexbox();
+          @include line-height(0.2rem);
+          @include rect(100%, 0.2rem);
+          span {
+            @include font-size(0.14rem);
+            @include text-color(#E51C23)
+          }
+          p {
+            @include margin(0 0 0 0.7rem);
+            i {
+              @include font-size(0.18rem);
+            }
+            span {
+              @include font-size(0.16rem);
+              @include text-color(rgb(255, 80, 0))
+            }
+          }
+        }
+        .goods-b {
+          @include rect(100%, 0.2rem);
+          .iconfont {
+            @include font-size(0.1rem);
+            @include margin(0 0.05rem);
+          }
+          span {
+            @include font-size(0.14rem);
+          }
+          .time {
+            @include font-size(0.14rem);
+            @include margin(0 0 0 0.65rem);
+          }
+        }
+      }
+    }
+  }
+}
+
