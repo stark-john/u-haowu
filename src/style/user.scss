@@ -1,0 +1,222 @@
+@import '@/lib/reset.scss';
+
+.container {
+  @include flexbox();
+  @include flex-direction(column);
+  .box4 {
+    @include flex();
+    @include rect(100%, auto);
+    @include flexbox();
+    @include flex-direction(column);
+    .header {
+      @include rect(100%, .44rem);
+      @include background-color(#D7D5D5);
+      @include flexbox();
+      @include justify-content(space-around);
+      @include align-items();
+      .title {
+        @include font-size(.14rem);
+        @include color(#747474);
+      }
+    }
+    .content {
+      @include flex();
+      @include rect(100%, auto);
+      @include background-color(#f0f0f0);
+      .user {
+        @include padding(0 .12rem);
+        @include background-color(#fff);
+        margin-bottom:.04rem;
+        .u_t {
+          @include flexbox();
+          @include justify-content(flex-start);
+          @include padding(.08rem 0 .08rem .08rem);
+          border-bottom:.01rem solid #f4f4f4;
+          .u_t_l {
+            @include background-color(#eae9e9);
+            @include rect(.68rem, .68rem);
+            @include border-radius(50%);
+            @include text-align();
+            span {
+              @include font-size(.46rem);
+              @include color(#B7B6B6);
+              @include line-height(.68rem);
+            }
+          }
+          .u_t_r {
+            @include color(#747474);
+            @include margin(0 0 0 .16rem);
+            @include flexbox();
+            @include justify-content();
+            @include align-items();
+            .u_t_r_ {
+              h3 {
+                @include font-size(.16rem);
+                @include font-weight(100);
+                @include line-height(.24rem);
+              }
+              .u_t_r_b {
+                span {
+                  @include font-size(.12rem);
+                  @include line-height(.18rem);
+                }
+                span:nth-child(1) {
+                  @include display(inline-block);
+                  @include rect(.39rem, auto);
+                }
+              }
+            }
+          }
+        }
+        .u_b {
+          @include flexbox();
+          @include justify-content(space-between);
+          @include align-items();
+          @include line-height(.31rem);
+          .u_b_l {
+            @include font-size(.14rem);
+            @include color(#747474);
+            .iconfont.icon-aixin {
+              @include font-size(.22rem);
+              margin:(0 .11rem 0 .08rem);
+            }
+          }
+          .u_b_r {
+            .iconfont.icon-youjiantou {
+              @include color(#e9e8e8);
+              @include font-size(.14rem);
+              margin-right:(0 .06rem);
+            }
+          }
+        }
+      }
+      .order {
+        @include background-color(#fff);
+        @include padding(0.02rem 0);
+        margin-bottom:.04rem;
+        .o_t {
+          @include margin(0 .12rem);
+          @include flexbox();
+          @include justify-content(space-between);
+          @include align-items();
+          @include line-height(.36rem);
+          border-bottom:.01rem solid #f4f4f4;
+          .o_t_l {
+            @include margin(.07rem 0 0 .08rem);
+            @include font-size(.16rem);
+            @include color(#747474);
+          }
+          .o_t_r {
+            @include font-size(.12rem);
+            @include color(#b6b5b5);
+            .iconfont.icon-youjiantou {
+              @include margin(0 0 0 .12rem);
+              @include color(#e9e8e8);
+              @include font-size(.14rem);
+            }
+          }
+        }
+        .o_b {
+          @include padding(.03rem 0);
+          @include rect(100%, .62rem);
+          ul {
+            @include rect(100%, 100%);
+            @include flexbox();
+            @include justify-content(space-around);
+            li {
+              @include rect(auto, 100%);
+              @include flexbox();
+              @include flex-direction(column);
+              @include justify-content(space-around);
+              @include align-items();
+              @include color(#767676);
+              span {
+                @include font-size(.2rem);
+              }
+              p {
+                @include font-size(.12rem);
+              }
+            }
+          }
+        }
+      }
+      .address {
+        @include background-color(#fff);
+        @include padding(0 .12rem .1rem);
+        margin-bottom:.08rem;
+        .a_t {
+          @include flexbox();
+          @include justify-content(space-between);
+          @include align-items();
+          @include line-height(.36rem);
+          border-bottom:.01rem solid #f4f4f4;
+          .a_t_l {
+            @include margin(.07rem 0 0 .08rem);
+            @include font-size(.16rem);
+            @include color(#747474);
+          }
+          .a_t_r {
+            .iconfont.icon-youjiantou {
+              @include color(#e9e8e8);
+              @include font-size(.14rem);
+            }
+          }
+        }
+        .a_b {
+          margin-bottom:.08rem;
+          @include padding(0 .07rem 0 .09rem);
+          @include font-size(.12rem);
+          @include color(#767676);
+          @include line-height(.3rem);
+          span {
+            @include display(inline-block);
+          }
+          .a_b_t {
+            @include flexbox();
+            @include justify-content(space-between);
+            span:nth-child(2) {
+            @include font-size(.1rem);
+            }            
+          }
+          .a_b_b {
+            @include flexbox();
+            @include justify-content(space-between);
+          }
+        }
+      }
+      .vip {
+        @include background-color(#fff);
+        @include padding(0 .12rem);
+        @include rect(100%, 100%);
+        ul {
+          @include rect(100%, auto);
+          li {
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items();
+            border-bottom:.01rem solid #f4f4f4;
+            @include line-height(.33rem);
+            .v_l {
+              @include font-size(.14rem);
+              @include color(#747474);
+              .iconfont {
+                @include font-size(.22rem);
+                margin:(0 .11rem 0 .08rem);
+              }
+            }
+            .v_r {
+              .iconfont.icon-youjiantou {
+                @include color(#e9e8e8);
+                @include font-size(.14rem);
+                margin-right:(0 .06rem);
+              }
+            }
+          }
+          a:nth-child(3) {
+            border:none;
+          }
+        }
+      }
+    }
+  }
+}
