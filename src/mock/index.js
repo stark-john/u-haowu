@@ -1,4 +1,9 @@
+import img1 from '@/images/home/1.png';
+import img2 from '@/images/home/2.png';
+import img3 from '@/images/home/3.png';
+import img4 from '@/images/home/4.png';
 const Mock = require('mockjs');
+
 
 let bannerlist = [];
 const getBanner = function () {
@@ -53,12 +58,13 @@ const getProList = function () {
   }
 }
 let homeGoodsList = []
-const homeGoodsList = function(){
-  return   homeGoodsList = [
-    {src:'../../images/1.png'},{src:'../../images/2.png'},{src:'../../images/3.png'},{src:'../../images/4.png'},{src:'../../images/5.png'},
+const getHomeGoodsList = function(){
+  homeGoodsList = [
+    {src:img1},{src:img2},{src:img3},{src:img4},{src:'/static/media/2.a245895a.png'},
   ]
+  return homeGoodsList
   }
 
 Mock.mock('http://www.daxunxun.com/banner', 'get', getBanner)
 Mock.mock('http://www.daxunxun.com/douban', 'get', getProList)
-Mock.mock('http://www.wangchengye.com/goodslist','get',homeGoodsList)
+Mock.mock('http://www.xiaoxunxun.com/goods','get',getHomeGoodsList)

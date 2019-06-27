@@ -2,16 +2,19 @@ import { connect } from 'react-redux';
 import UI from './UI';
 // import api from '@/api';
 import axios from 'axios';
-import Mock from '@/mock';
+import '@/mock/index';
+
 
 
 const mapStateToProps = (state) => {
-  console.log(state.home.nav)
+  // console.log(state.home.nav)
+
   return {
     bannerIn: state.home.bannerIn,
     bannerlist: state.home.bannerlist,
     navlist: state.home.nav,
-    imgheight: state.home.imgheight
+    imgheight: state.home.imgheight,
+    goods: state.home.goodslist
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -37,11 +40,13 @@ const mapDispatchToProps = (dispatch) => {
       })
     },
     getHomeGoodsListData(){
-      axios.get('http://wangchengye.com/goodslist').then(res=>{
+      axios.get('http://www.xiaoxunxun.com/goods').then(res=>{
         console.log(res.data)
+        // console.log("hiyoiihyuo" + JSON.stringify(res.data))
         dispatch({
           type:"changehomegoodslist",
-          data:res.data
+          data: res.data
+          // data:res.data
         })
       })
     },
