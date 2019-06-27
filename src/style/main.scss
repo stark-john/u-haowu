@@ -25,26 +25,33 @@ html, body, #root, .container,.animated-router-container {
   }
   .footer {
     @include rect(100%, 0.5rem);
-    @include background-color(#d5d5d5);
     ul {
       @include rect(100%, 100%);
       @include flexbox();
+      @include justify-content(space-between);
+      @include padding(0 .18rem .07rem );
       a {
-        @include flex();
         @include rect(auto, 100%);
         @include flexbox();
         @include flex-direction(column);
         @include justify-content();
         @include align-items();
-        @include text-color(#4599F8);
+        @include text-color(#333);
         span{
-          font:.24rem/1.2 '';
+          font-size:.25rem;
         }
         p{
-          font:.13rem/1.4 '';
+          font-size:.13rem;
         }
         &.active {
-          @include text-color(#f66);
+          @include text-color(#ff3333);
+        }
+      }
+      a:nth-child(2) {
+        @include justify-content(space-between);
+        span {
+          font-size:.22rem;
+          margin-top:-.01rem;
         }
       }
     }

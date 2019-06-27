@@ -1,19 +1,21 @@
 import React from 'react';
 import '@/style/user.scss';
+import userimg from '../../img/login.png';
+
 
 class Com extends React.Component {
   constructor (props) {
     super(props);
     this.orderlist = [
-      { className: 'iconfont icon-daifukuan', title: '待付款'},
-      { className: 'iconfont icon-daifahuo', title: '待发货'},
-      { className: 'iconfont icon-daishouhuo', title: '待收货'},
-      { className: 'iconfont icon-yiquxiao', title: '已取消'}
+      { className: 'ico-bg q', title: '待付款'},
+      { className: 'ico-bg w', title: '待发货'},
+      { className: 'ico-bg e', title: '待收货'},
+      { className: 'ico-bg r', title: '已取消'}
     ]
     this.viplist = [
-      { className: 'iconfont icon-huiyuanzhongxin', title: '会员中心'},
-      { className: 'iconfont icon-shezhi', title: '设置'},
-      { className: 'iconfont icon-kefu', title: '联系客服'}
+      { className: 'ico-bg a', title: '会员中心'},
+      { className: 'ico-bg s', title: '设置'},
+      { className: 'ico-bg d', title: '联系客服'}
     ]
   }
   orderclick (index) {
@@ -32,93 +34,97 @@ class Com extends React.Component {
     }
   }
 
-
   render () {
     return (
       <div className = "box4">
-        <header className = "header">
-          <span className = "title">我</span>
-        </header>
         <div className = "content">
           <div className = "user">
-            <div className = "u_t">
-              <div className = "u_t_l">
-                <span className = "iconfont icon-yonghudianji"></span>
+            <div className = "cir1"></div>
+            <div className = "cir2"></div>
+            <div className = "cir3"></div>
+            <div className = "cir4"></div>
+            <div className = "cir5"></div>
+            <div className = "u">
+              <div className = "u_l">
+                <img src = { userimg } alt = "" />
               </div>
-              <div className = "u_t_r">
-                <div className = "u_t_r_">
-                  <h3>黑化肥</h3>
-                  <div className = "u_t_r_b">
-                    <span>0积分</span><span>0金币</span>
-                  </div>
+              <div className = "u_r">
+                <div className = "u_r_t">
+                  <i className = "ico-bg" />
+                  <i className = "ico-bg" />
+                </div>
+                <div className = "u_r_c">
+                  <span>黑化肥</span>
+                  <i className = "ico-bg" />
+                </div>
+                <div className = "u_r_b">
+                  <span>积分 0</span><span>金币 0</span><span>点赞数 0</span><span>喜欢 0</span>
                 </div>
               </div>
             </div>
-            <div className = "u_b">
-              <div className = "u_b_l">
-                <span className = "iconfont icon-aixin"></span>
+          </div>
+          <div className = "con">
+            <div className = "collection">
+              <div className = "c_l">
+                <i className = "ico-bg" />
                 <span>我的收藏</span>
               </div>
-              <div className = "u_b_r">
-                <span className = "iconfont icon-youjiantou"></span>
+              <div className = "c_r">
+                <i className = "ico-bg" />
               </div>
             </div>
-          </div>
-          <div className = "order">
-            <div className = "o_t">
-              <div className = "o_t_l">我的订单</div>
-              <div className = "o_t_r">
-                <span>查看全部订单</span>
-                <span className = "iconfont icon-youjiantou"></span>
-              </div>
-            </div>
-            <div className = "o_b">
-              <ul>
-                {
-                  this.orderlist.map((item, index) => (
-                    <li key = { index } >
-                      <span className = { item.className }></span>
-                      <p>{ item.title }</p>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </div>
-          <div className = "address">
-            <div className = "a_t">
-                <div className = "a_t_l">我的地址</div>
-                <div className = "a_t_r">
-                  <span className = "iconfont icon-youjiantou"></span>
+            <div className = "order">
+              <div className = "o_t">
+                <div className = "o_t_l">
+                  <i className = "ico-bg" />
+                  <span>我的订单</span>
                 </div>
-            </div>
-            <div className = "a_b">
-              <div className = "a_b_t">
-                <span>蟹无名</span>
-                <span>+8612552356955</span>
+                <div className = "o_t_r">
+                  <span>查看全部订单</span>
+                  <i className = "ico-bg" />
+                </div>
               </div>
-              <div className = "a_b_b">
-                <span>河南省  郑州市  金水区  今夕何夕H座12楼</span>
-                <span>（默认地址）</span>
+              <div className = "o_b">
+                <ul>
+                  {
+                    this.orderlist.map((item, index) => (
+                      <li key = { index } >
+                        <span className = { item.className }></span>
+                        <p>{ item.title }</p>
+                      </li>
+                    ))
+                  }
+                </ul>
               </div>
             </div>
-          </div>
-          <div className = "vip">
+            <div className = "address">
+              <div className = "a_t">
+                <div className = "a_t_l">
+                  <i className = "ico-bg" />
+                  <span>我的地址</span>
+                </div>
+                <div className = "a_t_r">
+                  <i className = "ico-bg" />
+                </div>
+              </div>
+            </div>
+            <div className = "vip">
             <ul>
               {
                 this.viplist.map((item, index) => (
                   <li key = { index }>
                     <div className = "v_l">
-                      <span className = { item.className }></span>
+                      <i className = { item.className } />
                       <span>{ item.title }</span>
                     </div>
                     <div className = "v_r">
-                      <span className = "iconfont icon-youjiantou"></span>
+                      <i className = "ico-bg" />
                     </div>
                   </li>
                 ))
               }
             </ul>
+          </div>
           </div>
         </div>
       </div>
