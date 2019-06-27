@@ -5,11 +5,14 @@ import api from '@/api';
 
 const mapStateToProps = (state) => {
   return {
-  bannerlist: state.clothes.bannerlist
+  bannerIn: state.home.bannerIn,
+  bannerlist: state.clothes.bannerlist,
+  imgheight: state.clothes.imgheight
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
+  // console.log(this.imgheight)
   return {
     getBannerListData () {
       // console.log(11111111111111)
@@ -19,7 +22,19 @@ const mapDispatchToProps = (dispatch) => {
           data: data.banner
         })
       })
-    }
+    },
+    getHomeBannerIn(to){
+      dispatch({
+        type: 'changeBannerIn',
+        data: to
+      })
+    },
+    // getImgHeightData () {
+    //   dispatch({
+    //     type: 'changimgheight',
+    //     // data: state.imgHeight
+    //   })
+    // }
   }
 }
 

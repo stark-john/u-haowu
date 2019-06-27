@@ -1,14 +1,15 @@
 import React from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
 
-const App = ({ bannerlist }) => {
-  // console.log(bannerlist)
+const App = (props) => {
+  const  { bannerlist, imgheight, } = props;
+  // console.log(imgheight)
   return (
     <WingBlank>
         <Carousel
           autoplay
           infinite
-          // beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+          beforeChange={(from, to) => props.getHomeBannerIn(to)}
           // afterChange={index => console.log('slide to', index)}
         >
         
@@ -17,12 +18,12 @@ const App = ({ bannerlist }) => {
             <a
               key={index}
               href="http://www.alipay.com"
-              style={{ display: 'inline-block', width: '100%', height: '1.02rem' }}
+              style={{ display: 'inline-block', width: '100%', height: imgheight }}
             >
               <img
                 src={ val.src }
                 alt=""
-                style={{ width: '100%', verticalAlign: 'top',height: '1.02rem'  }}
+                style={{ width: '100%', verticalAlign: 'top',height: imgheight }}
                 // onLoad={() => {
                 //   // fire window resize event to change height
                 //   window.dispatchEvent(new Event('resize'));

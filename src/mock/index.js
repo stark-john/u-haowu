@@ -32,6 +32,7 @@ const getProList = function () {
     }
     homeDogList.push(item)
   }
+ 
   for (var i = 0; i < 6; i++) {
     let item = {
       id: 'cat' + i,
@@ -43,14 +44,21 @@ const getProList = function () {
     }
     homeCatList.push(item)
   }
+  
 
   return {
     dogList: homeDogList,
-    catList: homeCatList
+    catList: homeCatList,
+    homeGoodsList: homeGoodsList
   }
 }
-
-
+let homeGoodsList = []
+const homeGoodsList = function(){
+  return   homeGoodsList = [
+    {src:'../../images/1.png'},{src:'../../images/2.png'},{src:'../../images/3.png'},{src:'../../images/4.png'},{src:'../../images/5.png'},
+  ]
+  }
 
 Mock.mock('http://www.daxunxun.com/banner', 'get', getBanner)
 Mock.mock('http://www.daxunxun.com/douban', 'get', getProList)
+Mock.mock('http://www.wangchengye.com/goodslist','get',homeGoodsList)

@@ -2,6 +2,89 @@
 .box {
   .c-header{ 
     @include rect(100%, 0.44rem);
+    @include background-color(rgba(255,255,255,0.7));
+    @include flexbox();
+    position: absolute;
+    z-index: 1;
+    i.back {
+      background:url('../images/zuo.png') no-repeat center;
+      @include rect(0.25rem,0.25rem);
+      // @include background-color(red);
+      @include margin(0.1rem 0 0 0.08rem)
+    }
+    span {
+      @include font-size(0.16rem);
+      font-family: SourceHanSansCN-Medium;
+      @include line-height(0.44rem);
+      margin-left: 1.15rem;
+    }
+  }
+  .goods-list {
+    @include background-color(#f5f5f5);
+    @include flexbox();
+    flex-wrap: wrap;
+    // @include padding();
+    li {
+        @include rect(1.68rem,2.35rem);
+        @include margin(0.08rem 0 0.04rem 0.08rem);
+        @include flexbox();
+        @include flex-direction(column);
+        @include background-color(#fff);
+        img{
+          @include rect(100%, 100%);
+        }
 
+        .item {
+          @include flexbox();
+          @include flex-direction(column);
+          @include margin(0.13rem 0.27rem 0 0.12rem);
+          p.item-title {
+            @include text-color(#333333);
+            @include font-size(0.12rem);
+            @include line-height(0.15rem);
+            overflow:hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            @include rect(1.47rem, 0.15rem);
+          }
+          .item-data {
+            @include flexbox();
+            .item-l{
+              @include rect(1.3rem, 100%);
+              .describe {
+                @include font-size(0.1rem);
+                @include text-color(#999999);
+                width:100%;
+                overflow:hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+              .price {
+                margin-bottom: 0.05rem;
+                .price-n {
+                  @include font-size(0.12rem);
+                  @include text-color(#f33);
+                }
+                .price-o {
+                  text-decoration: line-through;
+                  margin-left: 0.05rem;
+                  @include font-size(0.1rem);
+                  @include text-color(#999);
+                }
+              }
+            }
+            .item-r {
+              background: #FF4949;
+
+              @include rect(0.2rem, 0.2rem);
+              @include border-radius(50%);
+              @include border(1px solid #FF4949);
+              // @include margin(0 0.08rem 0.17rem 0)
+              left:0.08rem;
+              top:0.1rem;
+            }
+          }
+        }
+    }
   }
 }

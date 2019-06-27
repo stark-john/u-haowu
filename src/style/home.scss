@@ -5,7 +5,7 @@
   @include rect(100%, 0.44rem);
   @include font-size(0.12rem);
   font-family: "Roboto";
-  @include background-color(#D5D5D5);
+  @include background-color(#1d1d1d);
   .search {
     @include text-color(rgba(170,170,170,1));
     display: flex;
@@ -28,14 +28,28 @@
   // .slider-slide {
   //   @include rect(100%, 1.02rem);
   // }
+  @include background-color(#EDEDED);
+  .am-wingblank-lg.am-wingblank {
+    @include rect(3.42rem, 2rem);
+    @include margin(0 auto);
+  }
+  .covered {
+    @include rect(100%,1rem);
+    @include background-color(#1d1d1d);
+    position: absolute;
+    z-index:0;
+  }
   .h-nav {
-    @include rect(100%, 1.6rem);
+    @include rect(3.44rem, 1.5rem);
+    @include background-color(#fff);
+    @include margin(0 auto);
+    @include border-radius(0.05rem);
     margin-bottom: 0.1rem;
     ul {
       @include flexbox();
       @include rect(100%, 100%);
       @include flex-wrap(wrap);
-      padding-top: 0.13rem;
+      // padding-top: 0.05rem;
       // border-bottom: 0.01 solid #D5D5D5;
       // @include justify-content(space-around);
       li {
@@ -61,66 +75,73 @@
 .h-goods {
   ul {
     width: 100%;
+    @include flexbox();
+    flex-wrap: wrap;
     li {
+      position: relative;
+      @include margin(0.08rem 0 0 0.08rem);
       @include flexbox();
-      @include rect(100%, 1.04rem);
-      @include padding(0.1rem 0.1rem);
-      border-top: 0.02rem solid #D5D5D5;
+      @include flex-direction(column);
+      @include rect(1.68rem, 2.35rem);
+      // @include padding(0.1rem 0.1rem);
+      // border-top: 0.02rem solid #D5D5D5;
       img {
-        @include rect(1.03rem, 0.84rem);
-        @include margin(0 0.09rem 0 0);
+        @include rect(100%, 100%);
+        // @include margin(0 0.09rem 0 0);
       }
-      .right {
+      .home-goods {
+        position: absolute;
+        bottom:0;
+        @include rect(100%, 0.68rem);
         @include flexbox();
         @include flex-direction(column);
         h3{
+          @include margin(0 auto);
           @include font-size(0.14rem);
           @include text-color(#000);
-          @include rect(2.2rem, 0.4rem);
-          @include line-height(0.2rem);
+          @include rect(1.51rem, 0.15rem);
+          @include line-height(0.16rem);
           overflow: hidden;
           text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
+          white-space: nowrap;
         }
-        .discount {
-          @include margin(0.05rem 0 0 0);
+        .goods-box {
           @include flexbox();
-          @include line-height(0.2rem);
-          @include rect(100%, 0.2rem);
-          span {
-            @include font-size(0.14rem);
-            @include text-color(#E51C23)
-          }
-          p {
-            @include margin(0 0 0 0.7rem);
-            i {
-              @include font-size(0.18rem);
+          .goods-box-l {
+            @include rect(100%,100%);
+            .h-describe{
+              @include font-size(0.1rem);
+              @include text-color(#999);
+              margin-left: 0.1rem;
             }
-            span {
-              @include font-size(0.16rem);
-              @include text-color(rgb(255, 80, 0))
+            .h-price {
+              @include rect(100%, 100%);
+              .h-price-n {
+                @include font-size(0.14rem);
+                @include text-color(#f33);
+                @include margin(0 0 0 0.1rem)
+              }
+              .h-price-o {
+                @include font-size(0.12rem);
+                @include text-color(#999);
+                @include margin(0 0 0 0.1rem);
+                text-decoration: line-through;
+              }
+              .h-once {
+                @include rect(0.5rem, 0.15rem);
+                margin-left:0.3rem;
+              }
+
             }
-          }
-        }
-        .goods-b {
-          @include rect(100%, 0.2rem);
-          .iconfont {
-            @include font-size(0.1rem);
-            @include margin(0 0.05rem);
-          }
-          span {
-            @include font-size(0.14rem);
-          }
-          .time {
-            @include font-size(0.14rem);
-            @include margin(0 0 0 0.65rem);
           }
         }
       }
     }
   }
+}
+.h-bottom {
+  text-align:center;
+  @include font-size(0.16rem);
+  @include text-color(#999);
 }
 
