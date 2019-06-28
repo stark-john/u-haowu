@@ -1,0 +1,275 @@
+@import '@/lib/reset.scss';
+
+//enter是入场前的刹那（点击按钮），appear指页面第一次加载前的一刹那（自动）
+.fade-enter, .fade-appear {
+  // opacity: 0;
+  bottom:-2.69rem;
+}
+//enter-active指入场后到入场结束的过程，appear-active则是页面第一次加载自动执行
+.fade-enter-active, .fade-appear-active { 
+  transition:.5s;
+  // transition: opacity 1s ease-in;
+}
+//入场动画执行完毕后，保持状态
+.fade-enter-done {
+  opacity: 1;
+  bottom:0;
+}
+//同理，出场前的一刹那，以下就不详细解释了，一样的道理
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-exit-done {
+  opacity: 0;
+}
+
+
+
+
+.box{
+    overflow: auto;
+  @include background-color(#efefef);
+  img.mainimg {
+    margin: 0
+  }
+   .probox{
+     @include rect(100%,1.43rem);
+     @include background-color(#fff);
+     .d-price {
+       @include line-height(0.44rem);
+       .d-price-n {
+         font-weight: bold;
+         @include font-size(0.18rem);
+         @include text-color(#f33);
+         margin-left: 0.08rem;
+       }
+       .d-price-o {
+        margin-left: 0.08rem;  
+        @include font-size(0.08rem);
+         @include text-color(#999);
+         text-decoration: line-through;
+       }
+     }
+     .d-title {
+       @include font-size(0.15rem);
+       @include text-color(#333);
+       @include line-height(0.18rem);
+       @include rect(3.43rem,0.35rem);
+       @include margin(0 auto);
+       font-weight: bold;
+     }
+     .d-describe {
+      @include font-size(0.12rem);
+      @include text-color(#999);
+      @include line-height(0.14rem);
+      @include rect(3.51rem, 0.4rem);
+      @include margin(0.15rem auto 0);
+     }
+   }
+   .d-choosebox{
+     @include margin(0.1rem auto);
+     @include rect(100%, 0.91rem);
+     li {
+       position: relative;
+       @include text-color(#333);
+       @include rect(100%, 0.3rem);
+       @include background-color(#fff);
+      .d-choose1 {
+        @include font-size(0.12rem);
+        @include line-height(0.3rem);
+        margin-left: 0.08rem;
+      }
+      .d-choose2 {
+        @include font-size(0.12rem);
+        @include line-height(0.3rem);
+        margin-left: 0.15rem;
+      }
+      .d-choose3 {
+        @include rect(0.08rem, 0.14rem);
+        display: inline-block;
+        background: url('../images/detail/right.png') no-repeat;
+        position:absolute;
+        right: 0.12rem;
+        top:0.08rem;
+
+      }
+     }
+     li.d-coupon {
+      @include margin(0.01rem auto);  
+      .d-choose2 {
+        @include text-color(#f33);
+      }       
+     }
+   }
+   img.goodsimg {
+     display:block;
+    // text-align:center;
+     @include margin(0.2rem auto);
+   }
+   
+   div.gai {
+     @include rect(100%, 0.5rem);
+   }
+   .justbuy {
+     position: fixed;
+     bottom: 0;
+     text-align: center;
+     @include rect(100%, 0.5rem);
+     @include flexbox();
+     .buy-left {
+       @include flexbox();
+       @include rect(1.6rem, 100%);
+       @include background-color(#fff);
+       @include flex-direction();
+       @include justify-content(space-between);
+       div {
+         @include flexbox();
+        //  @include rect(80%,100%);
+        width:32%;
+         @include flex-direction(column);
+        i {
+          @include rect(0.22rem, 0.22rem);
+          margin: 0 auto;
+          margin-top: 0.05rem;
+          display:inline-block;
+        }
+        span {
+          @include font-size(0.12rem);
+          width: 100%;
+        }
+        i.collection {
+          background:url('../images/detail/collection.png') no-repeat;
+        }
+        i.discuss {
+          background:url('../images/detail/discuss.png') no-repeat;
+        }
+        i.cart {
+          background:url('../images/detail/cart.png') no-repeat;
+        }
+       }
+      }
+     .buy-center {
+       @include font-size(0.16rem);
+       @include text-color(#fff);
+       @include line-height(0.5rem);
+       @include rect(1rem, 100%);
+       @include background-color(#333);
+     }
+     .buy-right {
+      @include font-size(0.16rem);
+      @include line-height(0.5rem);       
+      @include text-color(#fff);
+      @include rect(1rem, 100%);
+      @include background-color(#f33)
+    }
+   }
+   .d-toast {
+     position:absolute;
+     bottom: 0;
+     @include rect(100%, 2.69rem);
+     @include background-color(#f33);
+     .d-style {
+      @include rect(100%, 2.19rem);
+      @include background-color(#fff);
+      .color-size{
+        @include flexbox();
+        @include rect(100%, 0.3rem);
+        border-bottom:1px solid #ccc;
+        span {
+          @include rect(50%, 100%);
+          @include line-height(0.3rem);
+          @include font-size(0.14rem);
+          text-indent: 0.1rem;
+        }
+        i.icon-cuowu{
+          @include rect(0.16rem, 0.16rem);
+          @include font-size(0.16rem);
+          margin-left: 1.5rem;
+          margin-top:0.05rem;
+        }
+      }
+      .d-please {
+        @include rect(100%, 1.25rem);
+        border-bottom:1px solid #ccc;
+        @include padding(0.08rem 0 0 0.09rem);
+        .d-price-color {
+          @include flexbox();
+          @include rect(100%, 0.6rem);
+          .goodsdetail {
+            @include rect(0.6rem,0.6rem);
+            margin-right: 0.1rem;
+          }
+          .price-main {
+            @include flexbox();
+            @include flex-direction(column);
+            .d-price1{
+              @include font-size(0.14rem);
+              @include line-height(0.15rem);
+              @include text-color(#f33);
+            }   
+            .d-price2{
+              @include font-size(0.14rem);
+              @include line-height(0.18rem);
+              @include text-color(#999);
+              margin-top: 0.05rem;
+            }
+
+          }
+        }
+        .d-choose-color{
+          .d-yanse{
+            @include font-size(0.12rem);
+            @include line-height(0.28rem);
+            @include text-color(#999);
+          }
+          .colorchoice{
+            @include font-size(0.12rem);
+            @include text-align(center);
+            @include flexbox();
+            justify-content: space-around;
+            span{
+              @include rect(0.7rem, 0.22rem);
+              border: 1px solid #ccc;
+              border-radius: 0.03rem;
+            }
+          }
+
+        }
+      }
+       .d-choose-size {
+         @include padding(0 0 0 0.08rem);
+        .chima{
+          // @include 
+          @include font-size(0.12rem);
+          @include line-height(0.28rem);
+          @include rect(100%, 0.28rem);
+        }
+        .sizechoice{
+          @include flexbox();
+          @include text-align(center);
+          justify-content: space-around;
+          @include font-size(0.12rem);
+          @include line-height(0.25rem);
+          span {
+            @include rect(0.4rem, 0.25rem);
+            @include border-radius(0.03rem);
+            border: 1px solid #ccc;
+          }
+        }
+      }
+     }
+     .d-confirm {
+       @include rect(100%, 0.5rem);
+       @include text-color(#fff);
+       @include line-height(0.5rem);
+       @include text-align(center);
+       @include font-size(0.16rem);
+     }
+   }
+ }

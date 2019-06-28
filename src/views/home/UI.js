@@ -1,6 +1,6 @@
 import React from 'react';
 import '@/style/home.scss';
-import Banner from '@/components/Banner';
+import Banner from '@/components/Banner'; 
 const color = ['red','black','yellow','pink','green','blue','#f66']
 class Com extends React.Component {
 
@@ -53,13 +53,13 @@ class Com extends React.Component {
                     <li key={index}>
                       <img src={item.src} alt="" />
                       <div className="home-goods">
-                        <h3>SHISEIDO 资生堂 UNO 男...</h3>
+                        <h3 className='h-title'>{item.title}</h3>
                         <div className="goods-box">
                           <div className="goods-box-l">
-                            <p className="h-describe">男人也要重视洗脸</p>
+                            <p className="h-describe">{item.describe}</p>
                             <p className="h-price">
-                              <span className="h-price-n">$38</span>
-                              <span className="h-price-o">$110</span>
+                              <span className="h-price-n">${item.pricenow}</span>
+                              <span className="h-price-o">${item.priceold}</span>
                               <img className="h-once" src={require('../../images/home/once.png')} alt="" />
                             </p>
                           </div>

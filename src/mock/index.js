@@ -1,7 +1,19 @@
+// homegoodslist
 import img1 from '@/images/home/1.png';
 import img2 from '@/images/home/2.png';
 import img3 from '@/images/home/3.png';
 import img4 from '@/images/home/4.png';
+import img5 from '@/images/home/chanpin.png';
+// goodsimglist
+import img6 from '@/images/detail/detail-introduce.png';
+import img7 from '@/images/detail/donot.png';
+import img8 from '@/images/detail/champion.png';
+import img9 from '@/images/detail/details.png';
+import img10 from '@/images/detail/size.png';
+import img11 from '@/images/detail/wash.png';
+import img12 from '@/images/detail/bandstory.png';
+
+
 const Mock = require('mockjs');
 
 
@@ -57,10 +69,17 @@ const getProList = function () {
     homeGoodsList: homeGoodsList
   }
 }
+let goodsimglist = []
+
+const getGoodsImgList =function () {
+  goodsimglist = [{src:img6},{src:img7},{src:img8},{src:img9},{src:img10},{src:img11},{src:img12}]
+  return goodsimglist
+}
+
 let homeGoodsList = []
 const getHomeGoodsList = function(){
   homeGoodsList = [
-    {src:img1},{src:img2},{src:img3},{src:img4},{src:'/static/media/2.a245895a.png'},
+    {src:img1,title:'SHISEIDO 资生堂 UNO 男...',describe:'男人也要重视洗脸',pricenow:'22',priceold:'33'},{src:img2,title:'MEDIAN 麦迪安专业消理...',describe:'笑容自带闪光灯',pricenow:'11',priceold:'22'},{src:img3,title:'MOROCCANOIL摩洛哥油 ...',describe:' 再受损也能起死回生 ',pricenow:'3',priceold:'6'},{src:img4,title:'MEDIAN 麦迪安专业消理...',describe:' 柠檬酸钙易吸收 ',pricenow:'60',priceold:'123'},{src:img5,title:'Swisse 钙&VD片 150片/...',describe:' DIY蓝胖子冰淇凌 ',pricenow:'111',priceold:'473'},{src:img5,title:'Maxigenes美可卓 全脂高...',describe:' DIY蓝胖子冰淇凌 ',pricenow:'343',priceold:'786'},
   ]
   return homeGoodsList
   }
@@ -68,3 +87,4 @@ const getHomeGoodsList = function(){
 Mock.mock('http://www.daxunxun.com/banner', 'get', getBanner)
 Mock.mock('http://www.daxunxun.com/douban', 'get', getProList)
 Mock.mock('http://www.xiaoxunxun.com/goods','get',getHomeGoodsList)
+Mock.mock('http://www.wangchengye.com/imglist','get',getGoodsImgList)
