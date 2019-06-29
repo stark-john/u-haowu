@@ -8,8 +8,9 @@ class App extends React.Component {
 
   }
   render(){
+    console.log(this.props)
     return (
-      <div className="buysomething">
+      <div className= {`buysomething ${this.props.className}`}>
       <div className="d-toast">
         <div className="d-style">
           <div className="color-size">

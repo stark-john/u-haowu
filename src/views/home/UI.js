@@ -7,10 +7,14 @@ class Com extends React.Component {
   componentDidMount () {
     this.props.getHomeBannerListData();
     this.props.getHomeNavListData();
-    // this.props.scrollEvent()
     this.props.getHomeGoodsListData();
   }
-
+  jumpToGoodsList(index){
+    this.props.history.push('/branch/clothes');
+  }
+  jumpToGoodsDetail(index){
+    this.props.history.push('/branch/detail');
+  }
   render () {
     return (
       <div className = "box">
@@ -32,7 +36,7 @@ class Com extends React.Component {
               {
                 this.props.navlist.map((item, index)=>{
                   return (
-                    <li key = {index}>
+                    <li key = {index} onClick={this.jumpToGoodsList.bind(this,index)}>
                       <img src = {item.src} alt= {item.title}/>
                       <span>{item.title}</span>
                     </li>
@@ -50,7 +54,7 @@ class Com extends React.Component {
                this.props.goods.map((item, index)=>{
                  console.log(item)
                   return (
-                    <li key={index}>
+                    <li key={index} onClick={this.jumpToGoodsDetail.bind(this,index)}>
                       <img src={item.src} alt="" />
                       <div className="home-goods">
                         <h3 className='h-title'>{item.title}</h3>

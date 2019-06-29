@@ -33,10 +33,22 @@
 
 
 .box{
-    overflow: auto;
+  overflow: auto;
   @include background-color(#efefef);
   img.mainimg {
     margin: 0
+  }
+  .d-header {
+    position: absolute;
+    @include line-height(0.44rem);
+    @include rect(100%, 0.44rem);
+    @include background-color(rgba(255,255,255,0.9));
+    .icon-zuo {
+      @include display(block);
+      @include font-size(0.24rem);
+    margin-left: 0.05rem;
+    @include text-color(#666);
+    }
   }
    .probox{
      @include rect(100%,1.43rem);
@@ -116,6 +128,17 @@
    div.gai {
      @include rect(100%, 0.5rem);
    }
+   .joinsuccess{
+     display:none;
+     position: absolute;
+     bottom: 0.7rem;
+     left: 0.8rem;
+     @include rect(2rem, 0.5rem);
+    //  @include margin(0 auto);
+     img{
+       @include rect(100%, 100%);
+     }
+   }
    .justbuy {
      position: fixed;
      bottom: 0;
@@ -169,9 +192,20 @@
       @include background-color(#f33)
     }
    }
-   .d-toast {
+   .buysomething{
      position:absolute;
-     bottom: 0;
+      width:100%;
+     bottom:0;
+     overflow:hidden;
+     transition:.3s;
+     &.buysomething-hide{
+       height:0;
+     }
+     &.buysomething-show{
+      height:2.68rem;
+    }
+   }
+   .d-toast {
      @include rect(100%, 2.69rem);
      @include background-color(#f33);
      .d-style {

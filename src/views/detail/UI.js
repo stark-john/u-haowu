@@ -7,24 +7,34 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      isShow: false
+      isShow: false,
+      buyName: 'buysomething-hide',
     }
   }
 
   toBuy () {
     this.setState({
-      isShow: true
+      buyName: 'buysomething-show'
     })
+    console.log(this.state.isShow)
   }
-
+  goBack (){
+    this.props.history.go(-1)
+  }
   Event (e) {
-    console.log(e.target)
     if (e.target.className === 'iconfont icon-cuowu') {
       this.setState({
-        isShow: false
+        buyName: 'buysomething-hide'
       })
+    } else if(e.target.className === 'd-confirm') {
+      this.setState({
+        buyName: 'buysomething-hide'
+      })
+      this.refs.joinsuccess.style.display = 'block';
+      setTimeout(()=>{
+        this.refs.joinsuccess.style.display = 'none';
+      },1200)
     }
-    
   }
 
   componentDidMount(){
@@ -34,6 +44,9 @@ class App extends React.Component {
   render () {
     return (
       <div className="box" onClick = { this.Event.bind(this) }>
+        <header className="d-header">
+          <i className="iconfont icon-zuo" onClick={this.goBack.bind(this)}></i>
+        </header>
         <div className="d-content">
         <img className="mainimg" src={require('@/images/detail/goodsdetail.png')} alt="goodsdetail" />
         <div className="probox">
@@ -70,6 +83,7 @@ class App extends React.Component {
       <img  src={require('@/images/detail/details.png')} alt="dont" />
       <img  src={require('@/images/detail/wash.png')} alt="dont" />
       <img  src={require('@/images/detail/bandstory.png')} alt="dont" /> */}
+      <div ref="joinsuccess" className="joinsuccess"><img src={require('@/images/detail/joinsuccess.png')}/ ></div>
       <div className="gai"></div>
       </div>
       <div className="justbuy">
@@ -90,7 +104,7 @@ class App extends React.Component {
         <div className="buy-center" onClick = { this.toBuy.bind(this) }>加入购物车</div>
         <div className="buy-right">立即购买</div>
       </div>
-                    {  this.state.isShow ? <Buy ref = 'buyCom' /> :  <div></div> }
+                    <Buy ref = 'buyCom' className = {this.state.buyName} /> 
       </div>
     )
   }

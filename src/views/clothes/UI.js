@@ -23,14 +23,16 @@ class App extends React.Component {
     // })
   }
   
-  
+  goBack(){
+    this.props.history.go(-1);
+  }
   
   render () {
     console.log(this.props.imgheight)
     return (
       <div className="box">
         <header className="c-header">
-          <i className="back"></i>
+          <i className="back" onClick = {this.goBack.bind(this)}></i>
           <span>服饰配饰</span>
         </header>
         <div className="content">

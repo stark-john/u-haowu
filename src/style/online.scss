@@ -1,0 +1,70 @@
+@import '@/lib/reset.scss';
+.container{
+  .online-box {
+    @include flexbox();
+    @include flex-direction(column);
+    header.online-header {
+      @include rect(100%, 0.48rem);
+      background: linear-gradient(#FF0000,#FF3366);
+      // background: -moz-linear-gradient(tobottom,#FF0000,#FF3366);
+      // background: -o-linear-gradient(tobottom,#FF0000,#FF3366);
+      // background: -webkit-linear-gradient(tobottom,#FF0000,#FF3366);
+      @include flexbox();
+      i.online-back{
+        @include rect(0.09rem, 0.16rem);
+        background: url('../images/detail/back.png') no-repeat;
+        @include margin(auto 0.1rem);
+      }
+      span.o-text {
+        // @include rect(,100%);
+        @include margin(0 0 0 1.04rem);
+        @include font-size(0.16rem);
+        @include line-height(0.48rem);
+        @include text-color(#fff);
+      }
+    }
+    .online-content {
+      @include rect(100%, 5.17rem);
+      @include flexbox();
+    }
+    .online-footer{
+      @include background-color(#fff);
+      @include rect(100%, 0.5rem);
+      @include flexbox();
+      .inputquestion{
+        @include margin(auto 0.08rem);
+        @include rect(2.55rem, 0.36rem);
+        border: 1px solid #666;
+        @include border-radius(0.2rem);
+        @include flexbox();
+        @include align-items();
+        input {
+          margin-left:0.05rem;
+          border: 0;
+          @include border-radius(0.2rem);
+          @include rect(2rem, 0.3rem);
+          // margin-top:-0.5rem;
+          // margin-left:0.2rem;
+          text-indent: 0.1rem;
+        }
+        .icon-biaoqing{
+          @include font-size(0.24rem);
+          @include line-height(0.4rem);
+          margin-left: 0.1rem;
+        }
+      }
+      .icon-icon-cancel {
+        @include font-size(0.24rem);
+        @include line-height(0.48rem);
+        @include margin(0 0.05rem 0 0);
+      }
+      .send-word {
+        @include rect(0.5rem, 100%);
+        @include font-size(0.16rem);
+        @include line-height(0.48rem);
+        @include text-color(#999);
+        @include margin(0 auto);
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+@import '@/lib/reset.scss';
+
+.box {
+  .cheader {
+    .ctitle {
+      @include rect(100%, 1.46rem);
+      background: #37BEFC;
+      position: absolute;
+      // z-index: -1;
+      p {
+        @include flexbox();
+        @include justify-content(space-between);
+        padding: 0 .12rem;
+        span {
+          margin-top: .15rem;
+          font-size: .16rem;
+        }
+        i {
+          margin-top: .2rem;
+          font-size: .13rem;
+        }
+      }
+    }
+  }
+  .cartContent {
+    margin-top: .59rem;
+    background: #ECECEC;
+    margin-bottom: .2rem;
+    .cartlist {
+      margin: 0 .12rem;
+      .am-list .am-list-item.am-checkbox-item .am-list-thumb .am-checkbox {
+        top: 35%;
+      }
+      .am-list-body {
+        background: #ECECEC;
+        border-radius: .1rem;
+        overflow: hidden;
+        .am-list-item {
+          margin-bottom: .2rem;
+          border-radius: .1rem;
+          padding-top: .1rem;
+          .am-list-content {
+            @include flexbox();
+            white-space: pre-wrap;
+            .gleft {
+              @include flexbox();
+              @include flex-direction(column);
+              p {
+                @include rect(.99rem, .95rem);
+                background: #F2F2F2;
+                text-align: center;
+                line-height: .95rem;
+                img {
+                  @include rect(.44rem, .9rem);
+                }
+              }
+              span {
+                text-align: center;
+                font-size: .12rem;
+                color: #333;
+                line-height: .3rem;
+              }
+            }
+            .gright {
+              @include flexbox();
+              @include flex-direction(column);
+              margin-left: .16rem;
+              p.gname {
+                @include rect(1.4rem, .5rem);
+                font-size: .14rem;
+              }
+              p.gprice {
+                font-size: .16rem;
+                margin-top:.25rem;
+              }
+              p.gcount {
+                @include flexbox();
+                @include justify-content(flex-end);
+                @include rect(1.5rem, auto);
+                span {
+                  @include rect(.17rem, .17rem);
+                  background: #ccc;
+                  border-radius: 50%;
+                  text-align: center;
+                  line-height: .17rem;
+                  font-size: .16rem;
+                }
+                b {
+                  font-size: .14rem;
+                  margin: 0 .1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .guess {
+      background: #fff;
+      padding: .1rem;
+      position: relative;
+      h2 {
+        text-align: center;
+        font-size: .16rem;
+        margin-bottom: .15rem;
+      }
+      ul {
+        @include flexbox();
+        flex-wrap: wrap;
+        li {
+          margin-left: .13rem;
+          margin-bottom: .1rem;
+          .gimg {
+            @include rect(1.57rem, 2.24rem);
+            text-align: center;
+            line-height: 2.24rem;
+            background: #ececec;
+            img {
+            }
+          }
+          p {
+            @include rect(1.57rem, auto);
+            font-size: .16rem;
+            overflow: hidden;
+            white-space:nowrap;
+            text-overflow: ellipsis;
+            line-height: .3rem;
+            color: #333;
+          }
+          span {
+
+          }
+        }
+      }
+    }
+  }
+  .gbottom {
+    // @include rect(100%, .49rem);
+    margin-bottom: .03rem;
+    p {
+      @include flexbox();
+      @include justify-content(space-between);
+      font-size: .14rem;
+      i {
+        line-height: .4rem;
+      }
+      span {
+        b {
+          color: #37BEFC;
+          margin:0 .06rem;
+        }
+        button {
+          @include rect(.64rem, .37rem);
+          border:0;
+          border-radius: .18rem;
+          background: #37BEFC;
+          color: #fff;
+          font-size: .16rem;
+        }
+      }
+    }
+  }
+}
