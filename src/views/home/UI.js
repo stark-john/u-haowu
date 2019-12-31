@@ -6,6 +6,7 @@ class Com extends React.Component {
       <div className = "box">
         <header className = "header">Home头部</header>
         <div className = "content">Home内容</div>
+        <div>call me maybe</div>
       </div>
     )
   }
